@@ -399,6 +399,7 @@ class DSPhex():
             @param freq Частота.
             @param num Номер аппарата.
             @param device Тип аппарата.
+            @param version Версия прошивки.
         '''
         ## Тип аппарата.
         self._device = device;

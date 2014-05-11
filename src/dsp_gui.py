@@ -24,8 +24,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 from PyQt4 import Qt
 
-import dsp
-#import dsp.dsp as dsp
+import dsp as dsp
 import data.resources_rc
 
 #------------------------------------------------------------------------------

@@ -1,3 +1,4 @@
 *.hex
 *.log
 *.tmp
+/doc

@@ -19,7 +19,6 @@ import struct
 #
 def intToStrHex(val, num=None, arch="be"):
 	''' (int) -> str
-
 		Преобразование целого числа в строку HEX.
 		
 		@param val преобразуемое число
@@ -69,7 +68,6 @@ def intToStrHex(val, num=None, arch="be"):
 #
 def strHexToInt(val, arch="be"):
 	''' (str) -> int
-
 		Преобразование строки HEX в целое число.
 		
 		@param val преобразуемая строка
@@ -130,7 +128,6 @@ def charToStrHex(val):
 #
 def strHexToChar(val):
 	''' (str) -> str
-
 		Преобразование строки HEX в символы.
 
 		>>> strHexToChar('31')
@@ -155,7 +152,6 @@ def strHexToChar(val):
 #
 def strHexToFloat(s, arch="be"):
 	''' (str) -> float
-		
 		Возвращает float полученный hex-cтрокой.
 		@param arch выбор архитектуры
 		@arg "le" little-endian младшим байтом вперед
@@ -193,7 +189,6 @@ def strHexToFloat(s, arch="be"):
 #
 def floatToStrHex(val, arch="be"):
 	''' (float) -> str
-
 		Возвращает float преобразованный в hex-строку.
 		@param arch выбор архитектуры
 		@arg "le" little-endian младшим байтом вперед
@@ -223,16 +218,16 @@ def floatToStrHex(val, arch="be"):
 
 #
 def findCoeffDSP(str1, freq1, str2, freq2):
-	''' (str, int, str, int) -> list of (list of int).
+	''' (str, int, str, int) -> list of (list of int)
+        Нахождение разницы между двумя int в прошивке DSP.
+        
+        Возвращается список для рассчета значения в прошивке по
+        заданной частоте (A, B) -> A + B*freq.
 
-            Нахождение разницы между двумя int в прошивке DSP.
-            Возвращается список для рассчета значения в прошивке по
-            заданной частоте (A, B) -> A + B*freq.
-
-            >>>findCoeff('0001', 16, '803e', 1000)
-            '0 + (16 * freq)'
-            >>>findCoeff('9000', 16, '501F', 1000)
-            '16 + (8 * freq)'
+        >>>findCoeff('0001', 16, '803e', 1000)
+        '0 + (16 * freq)'
+        >>>findCoeff('9000', 16, '501F', 1000)
+        '16 + (8 * freq)'
     '''
 	b = (strHexToInt(str1, 'le') - strHexToInt(str2, 'le'))
 	b /= (freq1 - freq2)

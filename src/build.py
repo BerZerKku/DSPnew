@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import sys
-import os
-import py2exe
+#import os
+#import py2exe
 from distutils.core import setup
-from glob import glob
+#from glob import glob
 
 
 
